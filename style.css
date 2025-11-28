@@ -1,3 +1,9 @@
 .newwrapper1400 {
   max-width: 1400px;
+}
+
+aside a.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */

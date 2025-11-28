@@ -21,13 +21,6 @@ $newwrapper : 1400px;
 $bdrs: 1rem;
 $box-shadow: 0 2px 4px rgba($bk,.5);
 
-//$z-index
-$z-top: 999;
-$z-middle: 300;
-$z-low: 100;
-$z-2: 2;
-$z-1: 1;
-
 //$font
 $base-font-size: 16px;
 $rem-base: $base-font-size;
@@ -36,3 +29,14 @@ $number: "Short Stack", san-serif;
 $maru: "Zen Maru Gothic", san-serif;
 $text: "BIZ UDGothic", 'ヒラギノ角ゴシック', 'Hiragino Sans', 'メイリオ', Meiryo, sans-serif;
 $icomoon: 'icomoon' !important;
+
+// ============================================
+// Main
+// ============================================
+
+//# side
+aside a.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
