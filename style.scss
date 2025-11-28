@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+//$color
+$base: #FFFBF8;
+$bk:#444;
+$prime: #775337;
+$second: #9eb480;
+$gray: #717270;
+
+//$mediaquery
+@mixin sp {@media screen and (max-width: 767px) { @content; }}
+@mixin tb {@media screen and (min-width: 768px) { @content; } }
+@mixin pcs {@media screen and (min-width: 1280px) { @content; } }
+@mixin pc {@media screen and (min-width: 1366px) { @content; }}
+$newwrapper : 1400px;
+.newwrapper1400{
+    max-width: $newwrapper;
+}
+
+//$style
+$bdrs: 1rem;
+$box-shadow: 0 2px 4px rgba($bk,.5);
+
+//$z-index
+$z-top: 999;
+$z-middle: 300;
+$z-low: 100;
+$z-2: 2;
+$z-1: 1;
+
+//$font
+$base-font-size: 16px;
+$rem-base: $base-font-size;
+@function rem($size) {@return ($size / $rem-base) * 1rem;}
+$number: "Short Stack", san-serif;
+$maru: "Zen Maru Gothic", san-serif;
+$text: "BIZ UDGothic", 'ヒラギノ角ゴシック', 'Hiragino Sans', 'メイリオ', Meiryo, sans-serif;
+$icomoon: 'icomoon' !important;
