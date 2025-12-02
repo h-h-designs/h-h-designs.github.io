@@ -1,16 +1,127 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>Portfolio-HH</title>
-<meta name="robots" content="noindex">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.scss">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Portfolio by H.H.</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="page-transition" class="page-transition"></div>
+    
+    <header class="header" id="header">
+        <div class="header__inner">
+            <h1 class="header__logo">
+                <a href="index.html"><span>Portfolio by H.H.</span></a>
+            </h1>
+            <button class="header__toggle" id="menu-toggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
-<div id="sidebar-container"></div>
-<script src="common.js"></script>
+    <div class="aside" id="sidebar-container"></div>
 
+    <div class="aside-overlay" id="aside-overlay"></div>
+
+    <main class="main">
+        <div class="main__inner">
+            <section class="works">
+                <!-- <h2 class="works__title">Works</h2> -->
+
+                <div class="works__grid">
+                    <article class="work-card">
+                        <a href="page1.html" class="work-card__link">
+                            <div class="work-card__image">
+                                <img src="./img/ceremo-01.png" alt="ペット霊園情報ポータルサイト">
+                            </div>
+                            <div class="work-card__content">
+                                <h3 class="work-card__title">ペット霊園情報ポータルサイト</h3>
+                                <p class="work-card__category">2024.12～2025.3</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="work-card">
+                        <a href="page2.html" class="work-card__link">
+                            <div class="work-card__image">
+                                <img src="./img/page-6.jpg" alt="新規ECサイト全体実装">
+                            </div>
+                            <div class="work-card__content">
+                                <h3 class="work-card__title">新規ECサイト全体実装</h3>
+                                <p class="work-card__category">2025.10</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="work-card">
+                        <a href="page3.html" class="work-card__link">
+                            <div class="work-card__image">
+                                <img src="./img/page-2.jpg" alt="ECサイト内カテゴリLP">
+                            </div>
+                            <div class="work-card__content">
+                                <h3 class="work-card__title">ECサイト内カテゴリLP</h3>
+                                <p class="work-card__category">2022</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="work-card">
+                        <a href="page4.html" class="work-card__link">
+                            <div class="work-card__image">
+                                <img src="./img/book-1.jpg" alt="サービス紹介パンフレット">
+                            </div>
+                            <div class="work-card__content">
+                                <h3 class="work-card__title">サービス紹介パンフレット</h3>
+                                <p class="work-card__category">2025.3</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="work-card">
+                        <a href="page5.html" class="work-card__link">
+                            <div class="work-card__image">
+                                <img src="./img/print-6.jpg" alt="各種印刷物">
+                            </div>
+                            <div class="work-card__content">
+                                <h3 class="work-card__title">各種印刷物</h3>
+                                <p class="work-card__category">2023～現在</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="work-card">
+                        <a href="page6.html" class="work-card__link">
+                            <div class="work-card__image">
+                                <img src="./img/mail2.jpg" alt="リストマーケティング実践">
+                            </div>
+                            <div class="work-card__content">
+                                <h3 class="work-card__title">リストマーケティング実践</h3>
+                                <p class="work-card__category">2020～現在</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="work-card">
+                        <a href="page7.html" class="work-card__link">
+                            <div class="work-card__image">
+                                <img src="./img/de-1.jpg" alt="イラスト（パス＆手書き）">
+                            </div>
+                            <div class="work-card__content">
+                                <h3 class="work-card__title">イラストレーション（パス＆手書き）</h3>
+                                <p class="work-card__category">2019～現在</p>
+                            </div>
+                        </a>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="common.js"></script>
 </body>
 </html>

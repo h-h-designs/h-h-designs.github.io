@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>各種印刷物（製品案内） - Portfolio by H.H.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="page-transition" class="page-transition"></div>
+    
+    <header class="header" id="header">
+        <div class="header__inner">
+            <h1 class="header__logo">
+                <a href="index.html"><span>Portfolio by H.H.</span></a>
+            </h1>
+            <button class="header__toggle" id="menu-toggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="aside" id="sidebar-container"></div>
+
+    <div class="aside-overlay" id="aside-overlay"></div>
+
+    <main class="main">
+        <div class="main__inner">
+            <article class="project">
+                <h1 class="project__title">各種印刷物</h1>
+                <span class="project__title-hosoku">印刷物<i class="ri-calendar-event-line"></i>2023～現在</span>
+                <span class="project__title-hosoku">現職では様々な印刷物を手がけました。<br>インハウスデザイナーとして、企画やテキスト考案段階から携わることが多いです。<br>一部を抜粋し、まとめて掲載いたします。</span>
+
+        <div class="project__images--three">
+            <div class="image-item" data-lightbox data-caption-html="
+                    <div class='cap-title'>サービス案内フライヤー（2025年）</div>
+                    <div class='cap-desc'>
+                        製作時間：約4時間／A5両面サイズ<br>明るい印象にするべくパステルカラーと親しみやすいイラストを使用しました。
+                    </div>
+                ">
+                <img src="./img/print-2.jpg" alt="サービス案内フライヤー（2025年）">
+                <p class="image-caption">サービス案内フライヤー（2025年）</p>
+            </div>
+
+            <div class="image-item" data-lightbox data-caption-html="
+                    <div class='cap-title'>サービス案内フライヤー（2023年）</div>
+                    <div class='cap-desc'>
+                        製作時間：約4時間／A5両面サイズ<br>啓発用のため文章量が多くなりましたが、要点を強調してすっきりとまとめました。
+                    </div>
+                ">
+                <img src="./img/print-3.jpg" alt="サービス案内フライヤー（2023年）">
+                <p class="image-caption">サービス案内フライヤー（2023年）</p>
+            </div>
+
+            <div class="image-item" data-lightbox data-caption-html="
+                    <div class='cap-title'>イベントフライヤー（2024年）</div>
+                    <div class='cap-desc'>
+                        制作時間：約4時間／A5両面サイズ<br>高級感のある商材を訴求するため、くすみ系の落ち着いたトーンで構成しました。
+                    </div>
+                ">
+                <img src="./img/print-5.jpg" alt="イベントフライヤー（2025年）">
+                <p class="image-caption">イベントフライヤー（2025年）</p>
+            </div>
+
+            <div class="image-item" data-lightbox data-caption-html="
+                    <div class='cap-title'>営業用イベントフライヤー（2025年）</div>
+                    <div class='cap-desc'>
+                        制作時間：約4時間／A4両面サイズ<br>目に飛び込んでくるオレンジ～レッドをアクセントに据え、前向きな印象となるようまとめました。
+                    </div>
+                ">
+                <img src="./img/print-1.jpg" alt="営業用イベントフライヤー（2025年）">
+                <p class="image-caption">営業用イベントフライヤー（2025年）</p>
+            </div>
+
+            <div class="image-item" data-lightbox data-caption-html="
+                    <div class='cap-title'>営業用資料（2024年）</div>
+                    <div class='cap-desc'>
+                        制作時間：約8時間／A5二つ折り（4P）<br>内容の企画段階から関わりテキストライティングも行いました。
+                    </div>
+                ">
+                <img src="./img/print-6.jpg" alt="営業用資料（2024年）">
+                <p class="image-caption">営業用資料（2024年）</p>
+            </div>
+
+            <div class="image-item" data-lightbox data-caption-html="
+                    <div class='cap-title'>商品同梱パンフ（2024年）</div>
+                    <div class='cap-desc'>
+                        制作時間：約6時間／A4三つ折り（6P）<br>簡易カタログです。価格と商品特徴を見やすくレイアウトしています。
+                    </div>
+                ">
+                <img src="./img/print-8.jpg" alt="商品同梱パンフ（2024年）">
+                <p class="image-caption">商品同梱パンフ（2024年）</p>
+            </div>
+
+        </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox__close" id="lightbox-close" aria-label="閉じる">
+            <i class="ri-close-line"></i>
+        </button>
+        <button class="lightbox__arrow lightbox__arrow--prev" id="lightbox-prev" aria-label="前の画像">
+            <i class="ri-arrow-left-s-line"></i>
+        </button>
+        <button class="lightbox__arrow lightbox__arrow--next" id="lightbox-next" aria-label="次の画像">
+            <i class="ri-arrow-right-s-line"></i>
+        </button>
+        <div class="lightbox__content">
+            <img src="" alt="" id="lightbox-image">
+        </div>
+        <div class="lightbox__caption" id="lightbox-caption"></div>
+    </div>
+
+                <section class="project__section">
+                    <h2 class="project__heading">概要</h2>
+                    
+                    <div class="accordion">
+                        <div class="accordion__item">
+                            <button class="accordion__header" aria-expanded="true"  style="pointer-events: none;">
+                                <!-- <span class="accordion__icon">+</span> -->
+                            </button>
+                            <div class="accordion__content" style="max-height: 800px;">
+                                <p><b>■使用技術</b><br>Illustrator、Photoshop<br>社内外での打ち合わせが必要な案件については、CanvaやFigmaを活用して草案を作成・URL共有するなど工夫し、円滑な合意形成に努めています。</p>
+                                <p>以前（～2019年）に制作したものを以下のページにまとめています。<br>基本的なスキル感やこれまでの経験や表現の幅を示す資料として参考にしていただければ幸いです。</p>
+                                
+                <div class="project__activelink">
+                    <a href="https://eanda.notion.site/4103162048bf4796a22c82d4363513ec?pvs=73" target="_blank" rel="noopener noreferrer">ページはこちら <i class="ri-external-link-line"></i><br><img src="./img/de4-1.jpg" alt="過去の制作物" style="margin: 8px 0;"></a><span>※外部URL（Notionまとめページ）にジャンプします。</span>
+                </div>
+                            </div>
+                        </div>
+                </section>
+
+                <div class="project__nav">
+                    <a href="page4.html" class="project__back"><i class="ri-arrow-drop-left-line"></i>前のページを見る</a>
+                    <a href="index.html" class="project__back"><i class="ri-home-2-line"></i>一覧に戻る</a>
+                    <a href="page6.html" class="project__back">次のページに進む<i class="ri-arrow-drop-right-line"></i></a>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <script src="common.js"></script>
+</body>
+</html>
