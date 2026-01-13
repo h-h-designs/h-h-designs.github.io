@@ -63,6 +63,13 @@ button {
   font-family: inherit;
 }
 
+.pc{
+display: none;
+  @include tb {
+    display: block;
+  }
+}
+
 // Page Transition
 .page-transition {
   position: fixed;
@@ -453,6 +460,54 @@ font-size: 0.8rem;
 .work-card__category {
   font-size: 0.875rem;
   color: $color-secondary;
+}
+
+.work-card.profile{
+  background-color: rgba($color-border,.3);
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 0.8rem;
+  @include tb {
+    grid-column: span 2;
+    aspect-ratio: 4 / 1;
+  }
+}
+.work-card.profile td{
+  padding: .5rem;
+}
+
+.mailbutton{
+padding: .5rem 1rem;
+border: 1px solid #000;
+border-radius: 36px;
+text-align: center;
+display: block;
+font-family: "Futura", "Arial", sans-serif;
+letter-spacing: .05rem;
+margin: 1rem auto 0;
+font-size: 1rem;
+transition: .3s;
+transform: scale(1);
+}
+
+.mailbutton:hover{
+border: 1px solid $color-accent;
+transition: .3s;
+color: $color-accent;
+background-color: rgba($color-accent, .07);
+// transform: scale(1.01);
+}
+
+.profileimg{
+display: none;
+  @include tb {
+display: block;
+    border-radius: 50%;
+width: 150px;
+aspect-ratio: 1/1;
+margin: 0 auto;
+  }
 }
 
 // Project (Detail Page)

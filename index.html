@@ -120,11 +120,68 @@
                         </a>
                     </article>
 
+                    <article class="work-card profile">
+<table align="center" width="100%">
+<tr>
+<td>
+はじめまして。ページをご覧いただきありがとうございます。<br>
+1989年生・沖縄県出身東京都在住インハウスデザイナーの<br>さくさく見られるポートフォリオページです。<br>
+お気づきの点がありましたら、下記のメールアドレスにお気軽にご連絡ください。
+<script type="text/javascript">
+<!--
+function converter(M){
+var str="", str_as="";
+for(var i=0;i<M.length;i++){
+str_as = M.charCodeAt(i);
+str += String.fromCharCode(str_as + 1);
+}
+return str;
+}
+function mail_to(k_1,k_2)
+{eval(String.fromCharCode(108,111,99,97,116,105,111,110,46,104,114,101,102,32,
+61,32,39,109,97,105,108,116,111,58) 
++ escape(k_1) + 
+converter(String.fromCharCode(108,102,98,114,49,47,48,48,63,120,96,103,110,110,45,98,110,45,105,111,
+62,114,116,97,105,100,98,115,60)) 
++ escape(k_2) + "'");} 
+document.write('<a class="mailbutton" href=JavaScript:mail_to("","")><i class="ri-mail-line"></i>&#109;&#103;&#99;&#115;&#50;&#48;&#49;&#49;&#64;&#121;&#97;&#104;&#111;&#111;&#46;&#99;&#111;&#46;&#106;&#112;<\/a>');
+//-->
+</script>
+<noscript>（画像などを設置）</noscript>
+</td>
+<td align="center" class="pc"><img src="./profile.jpg" alt="h.h" class="profileimg"></td>
+</tr></table>
+                    </article>
+
                 </div>
             </section>
         </div>
     </main>
 
     <script src="common.js"></script>
+<script>
+  // 誕生日（1989/1/24）
+  const birth = new Date(1989, 0, 24); // 月は0始まりなので 0 = 1月
+
+  function getAge(birthDate) {
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+
+    // 今年の誕生日
+    const thisYearBirthday = new Date(
+      today.getFullYear(),
+      birthDate.getMonth(),
+      birthDate.getDate()
+    );
+
+    // まだ誕生日が来ていなければ1歳引く
+    if (today < thisYearBirthday) {
+      age--;
+    }
+    return age;
+  }
+
+  document.getElementById("age").textContent = getAge(birth) + "歳";
+</script>
 </body>
 </html>
