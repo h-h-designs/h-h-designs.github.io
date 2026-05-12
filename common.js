@@ -1,20 +1,31 @@
 // ページ遷移アニメーション
 document.addEventListener('DOMContentLoaded', function() {
   const transition = document.getElementById('page-transition');
-  
-  // ページ読み込み時のアニメーション
-  setTimeout(() => {
-    transition.classList.remove('is-active');
-  }, 100);
 
-  // リンククリック時のアニメーション
+  // 初期表示
+  if (transition) {
+    transition.classList.remove('is-active');
+  }
+
+  // リンククリック時
   const links = document.querySelectorAll('a:not([target="_blank"])');
+
   links.forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
-      if (href && href !== '#' && !href.startsWith('javascript:')) {
+
+      if (
+        href &&
+        href !== '#' &&
+        !href.startsWith('javascript:') &&
+        !href.startsWith('mailto:')
+      ) {
         e.preventDefault();
-        transition.classList.add('is-active');
+
+        if (transition) {
+          transition.classList.add('is-active');
+        }
+
         setTimeout(() => {
           window.location.href = href;
         }, 500);
@@ -22,18 +33,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // サイドバー読み込み
   loadSidebar();
-
-  // ヘッダースクロール制御
   initHeaderScroll();
-
-  // メニュートグル
   initMenuToggle();
-
-  // アコーディオン
   initAccordion();
+});
 
+// ブラウザバック対策
+window.addEventListener('pageshow', () => {
+  const transition = document.getElementById('page-transition');
+
+  if (transition) {
+    transition.classList.remove('is-active');
+  }
 });
 
 // サイドバー読み込み & ハイライト
@@ -135,26 +147,67 @@ function initMenuToggle() {
 // アコーディオン
 function initAccordion() {
   const accordionHeaders = document.querySelectorAll('.accordion__header');
-  
+  const toggleAllButton = document.querySelector('.accordion-toggle-all');
+
   accordionHeaders.forEach(header => {
     header.addEventListener('click', () => {
-      const item = header.parentElement;
-      const content = item.querySelector('.accordion__content');
-      const isOpen = header.getAttribute('aria-expanded') === 'true';
-      
-      // 現在の状態を切り替え
-      header.setAttribute('aria-expanded', !isOpen);
-      item.setAttribute('data-open', !isOpen);
-      
-      if (!isOpen) {
-        content.style.maxHeight = content.scrollHeight + 'px';
-      } else {
-        content.style.maxHeight = '0';
-      }
+      toggleAccordion(header);
     });
   });
+
+  // すべて開く
+  if (toggleAllButton) {
+    toggleAllButton.addEventListener('click', () => {
+      const allOpen = [...accordionHeaders].every(
+        header => header.getAttribute('aria-expanded') === 'true'
+      );
+
+      accordionHeaders.forEach(header => {
+        const isOpen = header.getAttribute('aria-expanded') === 'true';
+
+        if (allOpen && isOpen) {
+          closeAccordion(header);
+        }
+
+        if (!allOpen && !isOpen) {
+          openAccordion(header);
+        }
+      });
+
+      toggleAllButton.textContent = allOpen
+        ? 'すべて開く'
+        : 'すべて閉じる';
+    });
+  }
 }
 
+function openAccordion(header) {
+  const item = header.parentElement;
+  const content = item.querySelector('.accordion__content');
+
+  header.setAttribute('aria-expanded', 'true');
+  item.setAttribute('data-open', 'true');
+  content.style.maxHeight = content.scrollHeight + 'px';
+}
+
+function closeAccordion(header) {
+  const item = header.parentElement;
+  const content = item.querySelector('.accordion__content');
+
+  header.setAttribute('aria-expanded', 'false');
+  item.setAttribute('data-open', 'false');
+  content.style.maxHeight = '0';
+}
+
+function toggleAccordion(header) {
+  const isOpen = header.getAttribute('aria-expanded') === 'true';
+
+  if (isOpen) {
+    closeAccordion(header);
+  } else {
+    openAccordion(header);
+  }
+}
 
         // キーボードナビゲーション
         function initKeyboardNavigation() {
