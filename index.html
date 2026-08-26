@@ -32,9 +32,50 @@
 
     <main class="main">
         <div class="main__inner">
+        <h2 class="works__title">コンテンツ制作</h2>
             <section class="works">
-                <!-- <h2 class="works__title">Works</h2> -->
+                <div class="works__grid">
+                    <article class="work-card">
+                        <a href="contents1.html" class="work-card__link">
+                            <div class="work-card__image">
+                                <img src="./img/contents-05.jpg" alt="オウンドメディア運営">
+                            </div>
+                            <div class="work-card__content">
+                                <h3 class="work-card__title">オウンドメディア運営</h3>
+                                <p class="work-card__badge">SEOコラムブログ企画 / AIO</p>
+                                <p class="work-card__category">2025～現在</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="work-card">
+                        <a href="contents2.html" class="work-card__link">
+                            <div class="work-card__image">
+                                <img src="./img/contents-06.jpg" alt="コラム動画制作">
+                            </div>
+                            <div class="work-card__content">
+                                <h3 class="work-card__title">コラム動画制作プロジェクト</h3>
+                                <p class="work-card__badge">マルチチャネル情報発信</p>
+                                <p class="work-card__category">2026.5～2026.8</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="work-card">
+                        <a href="contents3.html" class="work-card__link">
+                            <div class="work-card__image">
+                                <img src="./img/mail2.jpg" alt="リストマーケティング実践">
+                            </div>
+                            <div class="work-card__content">
+                                <h3 class="work-card__title">リストマーケティング実践</h3>
+                                <p class="work-card__badge">メルマガ・LINEなどの運用</p>
+                                <p class="work-card__category">2020～現在</p>
+                            </div>
+                        </a>
+                    </article>
+                </div><!-- /.works__grid -->
+        </section>
 
+        <h2 class="works__title">デザイン制作</h2>
+            <section class="works">
                 <div class="works__grid">
                     <article class="work-card">
                         <a href="page1.html" class="work-card__link">
@@ -44,18 +85,6 @@
                             <div class="work-card__content">
                                 <h3 class="work-card__title">ペット霊園情報ポータルサイト</h3>
                                 <p class="work-card__category">2024.12～2025.3</p>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="work-card">
-                        <a href="page6.html" class="work-card__link">
-                            <div class="work-card__image">
-                                <img src="./img/mail2.jpg" alt="リストマーケティング実践">
-                            </div>
-                            <div class="work-card__content">
-                                <h3 class="work-card__title">リストマーケティング実践</h3>
-                                <p class="work-card__category">2020～現在</p>
                             </div>
                         </a>
                     </article>
@@ -102,54 +131,19 @@
                                 <img src="./img/print-6.jpg" alt="各種印刷物デザイン">
                             </div>
                             <div class="work-card__content">
-                                <h3 class="work-card__title">各種印刷物デザイン</h3>
+                                <h3 class="work-card__title">各種印刷物＆イラストレーション</h3>
                                 <p class="work-card__category">2023～現在</p>
                             </div>
                         </a>
                     </article>
 
-                    <article class="work-card">
-                        <a href="page7.html" class="work-card__link">
-                            <div class="work-card__image">
-                                <img src="./img/de-1.jpg" alt="イラスト（パス＆手書き）">
-                            </div>
-                            <div class="work-card__content">
-                                <h3 class="work-card__title">イラストレーション（パス＆手書き）</h3>
-                                <p class="work-card__category">2019～現在</p>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="work-card profile">
-<table align="center" width="100%">
-<tr>
-<td>
-はじめまして。ページをご覧いただきありがとうございます。<br>
-1989年生・沖縄県出身東京都在住インハウスデザイナーの<br>さくさく見られるポートフォリオページです。<br>
-お気づきの点がありましたら、下記メール宛までにお気軽にご連絡ください。
-
-<a id="email-link" href="#" class="mailbutton">Contact Me</a>
-</td>
-<td align="center" class="pc"><img src="./profile.jpg" alt="h.h" class="profileimg"></td>
-</tr></table>
-                    </article>
-
                 </div>
             </section>
         </div>
+
     </main>
 
     <script src="common.js"></script>
-<script>
-// 変換した文字列をここに貼る
-const encodedEmail = "bWdjczIwMTFAeWFob28uY28uanA="; 
-
-window.onload = function() {
-    const emailLink = document.getElementById('email-link');
-    const decodedEmail = atob(encodedEmail);
-    emailLink.setAttribute('href', 'mailto:' + decodedEmail);
-};
-</script>
 
 </body>
 </html>

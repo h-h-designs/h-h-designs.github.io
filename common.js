@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // リンククリック時
-  const links = document.querySelectorAll('a:not([target="_blank"])');
+  // .luminous（Lightbox用）・mailto・アンカーは除外
+  const links = document.querySelectorAll(
+    'a:not([target="_blank"]):not(.luminous):not([href^="mailto:"]):not([href^="#"])'
+  );
 
   links.forEach(link => {
     link.addEventListener('click', function(e) {
@@ -146,6 +149,27 @@ function initMenuToggle() {
 
 // アコーディオン
 function initAccordion() {
+  // アコーディオンを含む .project__section に「すべて開く」ボタンを自動挿入
+  document.querySelectorAll('.project__section').forEach(section => {
+    const accordion = section.querySelector('.accordion');
+    if (!accordion) return;
+
+    // 既に挿入済みなら skip
+    if (section.querySelector('.accordion-toggle-all')) return;
+
+    const heading = section.querySelector('.project__heading');
+    const btn = document.createElement('button');
+    btn.className = 'accordion-toggle-all';
+    btn.textContent = 'すべて開く';
+
+    // heading の直後に挿入
+    if (heading) {
+      heading.insertAdjacentElement('afterend', btn);
+    } else {
+      accordion.insertAdjacentElement('beforebegin', btn);
+    }
+  });
+
   const accordionHeaders = document.querySelectorAll('.accordion__header');
   const toggleAllButton = document.querySelector('.accordion-toggle-all');
 
@@ -174,9 +198,8 @@ function initAccordion() {
         }
       });
 
-      toggleAllButton.textContent = allOpen
-        ? 'すべて開く'
-        : 'すべて閉じる';
+      toggleAllButton.textContent = allOpen ? 'すべて開く' : 'すべて閉じる';
+      toggleAllButton.classList.toggle('is-all-open', !allOpen);
     });
   }
 }

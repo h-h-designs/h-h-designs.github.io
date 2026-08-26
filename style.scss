@@ -102,9 +102,26 @@ display: none;
   transition: transform $transition-speed;
   @include tb {
     height: $header-height-pc;
-    left: $aside-width;
+    // left: $aside-width;
+    left: calc($aside-width - 3px);
     width: calc(100% - #{$aside-width});
     padding: 30px 40px;
+    border-left: 2px solid  $color-bg;
+    z-index: 99999;
+    // &::after {
+    //     content: "";
+    //     top: calc($header-height-pc + 1px);
+    //   content: '';
+    //   position: absolute;
+    //   left: -20px;           // headerの左にはみ出してasideの上に乗せる
+    //   bottom: -20px;         // headerの下にはみ出す
+    //   width: 20px;
+    //   height: 20px;
+    //   background-color: $color-bg;
+    //   border-top-right-radius: 12px;
+    //   box-shadow: 4px -4px 0 0 $color-bg;
+    //   pointer-events: none;
+    // }
   }
   &.is-hidden {
     transform: translateY(-100%);
@@ -262,6 +279,8 @@ display: none;
     display: flex;
   align-items: center;
 justify-content: center;
+    z-index: 101;        // PC: headerより前面（100より上）
+
   }
   &.is-open {
     left: 0;
@@ -395,11 +414,11 @@ font-size: 0.8rem;
 
 // Works (Index)
 .works__title {
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-bottom: 40px;
   @include tb {
-    font-size: 2.5rem;
-    margin-bottom: 60px;
+    font-size: 2rem;
+    // margin-bottom: 60px;
   }
 }
 
@@ -407,6 +426,7 @@ font-size: 0.8rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
+  margin: 0 0 80px;
   @include tb {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
@@ -457,57 +477,18 @@ font-size: 0.8rem;
   margin-bottom: 8px;
 }
 
+.work-card__badge {
+  font-size: 0.7rem;
+  color: $color-secondary;
+  border: 1px solid $color-secondary;
+  padding: 0.2rem 0.9rem 0;
+  display: inline-block;
+  margin: 0 0 8px;
+  border-radius: 1rem;
+}
 .work-card__category {
   font-size: 0.875rem;
   color: $color-secondary;
-}
-
-.work-card.profile{
-  background-color: rgba($color-border,.3);
-  overflow: hidden;
-  border-radius: 8px;
-  padding: 1rem;
-  font-size: 0.8rem;
-  @include tb {
-    grid-column: span 2;
-    aspect-ratio: 4 / 1;
-  }
-}
-.work-card.profile td{
-  padding: .5rem;
-}
-
-.mailbutton{
-padding: .5rem 1rem;
-border: 1px solid #000;
-border-radius: 36px;
-text-align: center;
-display: block;
-font-family: "Futura", "Arial", sans-serif;
-letter-spacing: .05rem;
-margin: 1rem auto 0;
-font-size: 1rem;
-transition: .3s;
-transform: scale(1);
-}
-
-.mailbutton:hover{
-border: 1px solid $color-accent;
-transition: .3s;
-color: $color-accent;
-background-color: rgba($color-accent, .07);
-// transform: scale(1.01);
-}
-
-.profileimg{
-display: none;
-  @include tb {
-display: block;
-    border-radius: 50%;
-width: 150px;
-aspect-ratio: 1/1;
-margin: 0 auto;
-  }
 }
 
 // Project (Detail Page)
@@ -625,6 +606,14 @@ margin: 0 8px ;
     margin-top: 1em;
   }
 }
+.project__textlink {
+  line-height: 1.8;
+  color: $color-accent;
+  text-decoration: underline;
+  & + & {
+    margin-top: 1em;
+  }
+}
 
 .project__activelink a{
 display: block;
@@ -664,6 +653,37 @@ margin: 16px auto 32px;
 }
 
 // Accordion
+.accordion-toggle-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  color: $color-secondary;
+  border: 1px solid $color-border;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: color $transition-speed, border-color $transition-speed, background-color $transition-speed;
+
+  &::before {
+    content: '+';
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform $transition-speed;
+  }
+
+  &.is-all-open::before {
+    transform: rotate(45deg);
+  }
+
+  &:hover {
+    color: $color-accent;
+    border-color: $color-accent;
+    background-color: rgba($color-accent, 0.05);
+  }
+}
+
 .accordion {
   margin-top: 30px;
 }
@@ -914,4 +934,37 @@ margin: 16px auto 32px;
     font-size: 1.2rem;
     margin: 8px auto;
     display: block;
+}
+a.luminous {
+  position: relative;
+  display: block;        // ← 既にblockなら不要
+
+  &::after {
+    content: "\f2db";   // ri-zoom-in-line のコードポイント
+    font-family: "remixicon" !important;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity $transition-speed, transform $transition-speed;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+.lum-lightbox {
+    background: rgba(0, 0, 0, .6);
+    z-index: 999;
 }
