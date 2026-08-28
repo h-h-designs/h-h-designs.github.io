@@ -350,7 +350,7 @@ justify-content: center;
   display: block;
   margin: 0 8px 0 0;
   @include tb {
-  width: 30%;
+         width: max(24%);
   }
   img {
     width: 100%;
