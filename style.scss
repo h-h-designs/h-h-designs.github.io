@@ -293,6 +293,10 @@ justify-content: center;
     padding: 30px 20px;
   }
 }
+.aside__inner h3 {
+ font-size: clamp(1rem, 2vw, 16px);
+}
+
 
 .aside__list {
   list-style: none;
@@ -350,7 +354,7 @@ justify-content: center;
   display: block;
   margin: 0 8px 0 0;
   @include tb {
-         width: max(24%);
+        //  width: max(24%);
   }
   img {
     width: 100%;
@@ -363,7 +367,7 @@ justify-content: center;
 .aside__label {
   display: block;
   margin-top: 8px;
-  font-size: 0.8rem;
+  font-size: clamp(0.7rem, 1.4vw, 12px);
   color: $color-secondary;
   transition: color $transition-speed;
 }
