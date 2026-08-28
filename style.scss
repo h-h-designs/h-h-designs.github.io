@@ -354,7 +354,7 @@ justify-content: center;
   display: block;
   margin: 0 8px 0 0;
   @include tb {
-        //  width: max(24%);
+         width: max(24%);
   }
   img {
     width: 100%;
@@ -367,7 +367,7 @@ justify-content: center;
 .aside__label {
   display: block;
   margin-top: 8px;
-  font-size: clamp(0.7rem, 1.4vw, 12px);
+  font-size: clamp(0.7rem, 1.4vw, 14px);
   color: $color-secondary;
   transition: color $transition-speed;
 }
