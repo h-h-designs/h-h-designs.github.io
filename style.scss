@@ -107,7 +107,6 @@ display: none;
     width: calc(100% - #{$aside-width});
     padding: 30px 40px;
     border-left: 2px solid  $color-bg;
-    z-index: 99999;
     // &::after {
     //     content: "";
     //     top: calc($header-height-pc + 1px);

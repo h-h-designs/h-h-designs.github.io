@@ -84,7 +84,6 @@ button {
     width: calc(100% - 300px);
     padding: 30px 40px;
     border-left: 2px solid #faf9f9;
-    z-index: 99999;
   }
 }
 .header.is-hidden {
